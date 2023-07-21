@@ -1,32 +1,31 @@
 # Prueba Técnica Auxiliar de Programación
 
-...
-## 1.	Utilizar GIT para presentar los resultados de la prueba compartiendo el acceso al repositorio.
+*1.	Utilizar GIT para presentar los resultados de la prueba compartiendo el acceso al repositorio.*
 
 
 **R/ https://github.com/MichaelNossa09/CrudPruebaBanasan**
 
-## 2.	Para las siguientes preguntas marque cuál es el valor que continuaría en la serie:
+*2.	Para las siguientes preguntas marque cuál es el valor que continuaría en la serie:*
 
-| 1 | 3 | 7 | 13 | 21 |
-| 2 | 4 | 10 | 28 | 82 | 244 | 730
-| B | D | B | F | D | J |
-| 1 | 2 | 4 | 8 | 16 | 32 |
-| 3.1 | 1.5 | 5.3 | 3.3 | 3.2 |
-| 3 | 6 | 3 | 12 | 7 | 42 | 35 |
-| 2 | 4 | 6 | 10 | 16 | 26 |
-| 1:05 | 3:10 | 7:20 | 1:35 | 9:55 |
+| 1 | 3 | 7 | 13 | 21 |  
+| 2 | 4 | 10 | 28 | 82 | 244 | 730 |  
+| B | D | B | F | D | J |  
+| 1 | 2 | 4 | 8 | 16 | 32 |  
+| 3.1 | 1.5 | 5.3 | 3.3 | 3.2 |  
+| 3 | 6 | 3 | 12 | 7 | 42 | 35 |  
+| 2 | 4 | 6 | 10 | 16 | 26 |  
+| 1:05 | 3:10 | 7:20 | 1:35 | 9:55 |   
 
 
 ## 3.	SQL. De acuerdo con el siguiente modelo de tablas, elabore las sentencias SQL con las cuales puede realizar las consultas 
  
-#### Vendedores:
+*Vendedores:*
     - id_vendedor es la llave primaria. 
     - Cada fila de esta tabla indica el nombre y la identificación de un vendedor junto con su salario, tasa de comisión y fecha de contratación.
-#### Empresa:
+*Empresa:*
     - id_empresa es la llave primaria.
     - Cada fila de esta tabla indica el nombre y el ID de una empresa y la ciudad en la que se encuentra la empresa.
-#### Ordenes:
+*Ordenes:*
     - id_orden es la llave principal.
     - id_empresa es una llave foránea a id_empresa de la tabla Empresa.
     - id_vendedor es una llave foránea a id_vendedor de la tabla Vendedores.
@@ -64,7 +63,7 @@ ORDER BY Recaudado DESC
     * Usuario que publica
     * Número de votos
 2.	Inicio de sesión (usuario, contraseña) 
-#### (No obligatorio) Requiere autenticación para acceder a las siguientes funcionalidades.
+**(No obligatorio) Requiere autenticación para acceder a las siguientes funcionalidades.**  
 3. Crear una publicación (título, contenido (puede ser solo texto), fecha de creación, usuario creador, cantidad de votos).
 4. Editar una publicación.
 5. Eliminar una publicación.
@@ -76,7 +75,7 @@ ORDER BY Recaudado DESC
 **Se tendrán en cuenta factores como rendimiento y el diseño de la propia interface**
 
 
-#### 5.	(No obligatorio) Realizar una macro en Excel que permita recorrer una lista de personas. En dicho recorrido se debe seleccionar las personas del sexo masculino y con ellas crear una nueva lista en una nueva hoja de Excel.
+*#### *5.	(No obligatorio) Realizar una macro en Excel que permita recorrer una lista de personas. En dicho recorrido se debe seleccionar las personas del sexo masculino y con ellas crear una nueva lista en una nueva hoja de Excel.*
 
 ```vb
 Sub FiltrarPorSexo()
