@@ -1,0 +1,1189 @@
+/* Publicaciones */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px 20px;
+    background-color: #fff;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo span {
+    display: flex;
+    padding-right: 4px;
+}
+
+header .logo span svg {
+    display: flex;
+}
+
+header .logo .reddit-logo {
+    color: #000;
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    margin-right: 20px;
+}
+
+.btn {
+    border: none;
+    margin-right: 20px;
+    width: 130px;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #D93A00;
+}
+
+.btn:last-of-type {
+    margin-right: 0;
+}
+
+.btn:hover {
+    background-color: #962900;
+    transition: all .5s;
+}
+
+header .search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    width: 600px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+    display: flex;
+    align-items: center;
+    border: 0;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: transparent;
+    width: 100%;
+    padding: 10px 0;
+    outline: none;
+
+}
+
+.search-input:active {
+    border: none;
+}
+
+.search-button {
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.3);
+    border: none;
+    margin-right: 10px;
+}
+
+.search-button svg {
+    font-size: 16px;
+    fill: rgba(0, 0, 0, 0.6);
+}
+
+.modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para el modal */
+.modal {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    position: relative;
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 300;
+    margin-bottom: 22px;
+}
+
+.modal-content p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.modal-content form input {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-content form input[type="submit"] {
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+/* Estilos para el botón de cerrar */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 26px;
+    color: #ff4500;
+    cursor: pointer;
+}
+
+/* Estilos para la barra de notificaciones */
+.notification-bar {
+    display: none;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+}
+
+.notification-bar.show {
+    display: flex;
+}
+
+.notification-bar.success {
+    background-color: #4CAF50;
+}
+
+.notification-bar.error {
+    background-color: #F44336;
+}
+
+.notification-bar .message {
+    flex: 1;
+}
+
+.notification-bar .close {
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.error-message {
+    display: block;
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+.actions-users {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actions-users svg {
+    margin: 0px 5px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 3px;
+}
+
+.actions-users svg:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all .2s;
+}
+
+.actions-users .user {
+    margin-left: 15px;
+    display: flex;
+    float: left;
+    height: 40px;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.actions-users .user:hover {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all .2s;
+}
+
+.actions-users .user .profile {
+    display: none;
+    position: absolute;
+    flex-flow: column;
+    top: 40px;
+    right: 0;
+    z-index: 9999;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    width: 100%;
+    cursor: initial;
+    background-color: #fff;
+    transition: all .2s;
+}
+
+.actions-users .user .profile a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #000;
+    display: flex;
+    margin: 5px auto;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ff4500;
+}
+
+.actions-users .user .profile a:hover {
+    color: #ff4500;
+    transition: all .2s;
+}
+
+.actions-users .user .profile.show {
+    display: flex;
+}
+
+.actions-users .user .name {
+    line-height: 20px;
+    width: 100px;
+}
+
+.actions-users .user .name p {
+    text-align: center;
+    font-size: 14px;
+}
+
+.actions-users .user svg {
+    border: none;
+}
+
+.actions-users .user svg:hover {
+    border: none;
+    background-color: initial;
+}
+
+.actions-users .user .estrellas {
+    display: flex;
+    align-items: center;
+}
+
+.actions-users .Advertise {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #000;
+    text-decoration: none;
+}
+
+.actions-users .Advertise:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all .2s;
+}
+
+.contenedor {
+    display: flex;
+    flex-flow: row;
+    width: 80%;
+    margin: 70px auto;
+}
+
+.contenedor .principal {
+    display: flex;
+    flex-flow: column;
+    margin: 0 10px;
+}
+
+.contenedor .principal .create-post {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.contenedor .principal .create-post svg {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.contenedor .principal .create-post input {
+    margin-left: 15px;
+    width: 70%;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 40px;
+}
+
+.contenedor .principal .publis-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.contenedor .principal .publis-type .types {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.contenedor .principal .publis-type .types .type {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.contenedor .principal .publis-type .types .type:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all .2s;
+}
+
+.contenedor .principal .publis-type .types .type a {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.contenedor .principal .publis-type .types .setting {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.contenedor .principal .publis-type .types .setting:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all .2s;
+}
+
+.contenedor .principal .publis-type .types .type svg {
+    display: flex;
+    flex-flow: row;
+    margin-right: 5px;
+    align-items: center;
+}
+
+.contenedor .principal .content .publis-type .left {
+    margin-right: 10px;
+}
+
+.contenedor .principal .publicaciones {
+    display: flex;
+    flex-flow: row;
+    padding: 8px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.contenedor .principal .publicaciones .votes {
+    height: 70px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.contenedor .principal .publicaciones .votes .vote-up:hover {
+    fill: #ff4500;
+    transition: all .2s;
+}
+
+.contenedor .principal .publicaciones .votes .vote-down:hover {
+    fill: lightskyblue;
+    transition: all .2s;
+}
+
+.contenedor .principal .publicaciones .votes svg {
+    height: 16px;
+    cursor: pointer;
+}
+
+.contenedor .principal .publicaciones .votes p {
+    margin: 10px 0;
+}
+
+#vote-up.active {
+    fill: orange;
+}
+
+#vote-down.active {
+    fill: blue;
+}
+
+.contenedor .principal .publicaciones .info-publi {
+    display: flex;
+    flex-flow: column;
+}
+
+.contenedor .principal .publicaciones .info-publi .user-icon {
+    display: flex;
+    margin: 0 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contenedor .principal .publicaciones .info-publi .user-icon .info-user {
+    display: flex;
+}
+
+.contenedor .principal .publicaciones .info-publi .user-icon .info-user p {
+    margin-left: 10px;
+}
+
+.contenedor .principal .publicaciones .info-publi .user-icon .info-user p:last-of-type {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.contenedor .principal .publicaciones .info-publi .user-icon p {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.contenedor .principal .publicaciones .info-publi .user-icon svg {
+    height: 0.8em;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.contenedor .principal .publicaciones .info-publi .user-icon svg:hover {
+    fill: #ff4500;
+    transition: all .2s;
+}
+
+.contenedor .principal .publicaciones .info-publi .publicacion-content p {
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.contenedor .principal .publicaciones .info-publi .publicacion-content img {
+    max-width: 100%;
+    max-height: 400px;
+    margin-left: 10px;
+}
+
+
+.contenedor .aside {
+    display: flex;
+    max-height: 500px;
+    width: 80%;
+    flex-flow: column;
+    margin: 0 20px;
+}
+
+.contenedor .aside .reddit-premium {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.contenedor .aside .reddit-premium .text {
+    display: flex;
+    flex-direction: row;
+    height: 60%;
+}
+
+.contenedor .aside .reddit-premium .text svg {
+    font-size: 28px;
+    fill: #ff4500;
+    margin-right: 10px;
+}
+
+.contenedor .aside .reddit-premium .text p {
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.contenedor .aside .reddit-premium .text p:first-of-type {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.contenedor .aside .reddit-premium button {
+    height: 40%;
+    border-radius: 15px;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contenedor .aside .reddit-premium button:hover {
+    opacity: 0.9;
+    transition: all .2s;
+}
+
+.contenedor .aside .contenido {
+    display: flex;
+    width: 100%;
+    flex-flow: column;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.contenedor .aside .create-post-home {
+    margin-top: 20px;
+}
+
+.contenedor .aside .create-post-home a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    align-items: center;
+    height: 30px;
+    padding: 5px;
+    background-color: rgb(51, 154, 213);
+    border-radius: 10px;
+    border: none;
+    text-transform: uppercase;
+}
+
+.contenedor .aside .create-post-home a:hover {
+    opacity: 0.8;
+    transition: all .2s;
+}
+
+/* */
+
+
+.container {
+    display: flex;
+    flex-flow: row;
+    margin-top: 50px;
+}
+
+.container .content {
+    display: flex;
+    flex-flow: column;
+}
+
+.container .menu-lateral {
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 10px 22px;
+}
+
+.container .menu-lateral .first {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: 8px 0;
+}
+
+.container .menu-lateral .first .item {
+    display: flex;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.container .menu-lateral .first .item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all .2s;
+}
+
+.container .menu-lateral .first .item svg {
+    font-size: 20px;
+    margin-right: 10px;
+    fill: rgba(0, 0, 0, 0.8);
+}
+
+.container .menu-lateral .first .item span {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.container .menu-lateral .temas {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.container .menu-lateral .temas .item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 10px 15px;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.container .menu-lateral .temas .item svg {
+    fill: rgba(0, 0, 0, 0.6);
+}
+
+.container .menu-lateral .temas .item p {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.container .menu-lateral .temas .item .item-down {
+    display: flex;
+    align-items: center;
+}
+
+.container .menu-lateral .temas .item .item-down svg {
+    fill: rgba(0, 0, 0, 0.8);
+    margin-right: 10px;
+}
+
+.container .menu-lateral .temas .item .item-down p {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.container .menu-lateral .temas .item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all .2s;
+}
+
+.container .publicaciones {
+    display: flex;
+    flex-flow: row;
+    padding: 8px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 70%;
+    margin: 20px 0;
+    margin-left: calc(20% + 100px);
+}
+
+.container .publicaciones .votes {
+    display: flex;
+    height: 80px;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 10px;
+}
+
+.container .publicaciones .votes svg {
+    height: 16px;
+    cursor: pointer;
+}
+
+.container .publicaciones .votes svg:hover {
+    fill: #ff4500;
+    transition: all .2s;
+}
+
+.container .publicaciones .votes p {
+    margin: 10px 0;
+}
+
+.container .publicaciones .info-publi {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+.container .publicaciones .info-publi .user-icon {
+    display: flex;
+    margin: 0 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .publicaciones .info-publi .user-icon .info-user {
+    display: flex;
+}
+
+.container .publicaciones .info-publi .user-icon .info-user p {
+    margin-left: 10px;
+}
+
+.container .publicaciones .info-publi .user-icon .info-user p:last-of-type {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.container .publicaciones .info-publi .user-icon .unirse button {
+    border: none;
+    background-color: initial;
+    padding: 2px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container .publicaciones .info-publi .user-icon .unirse button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all .2s;
+}
+
+.container .publicaciones .info-publi .user-icon p {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.container .publicaciones .info-publi .user-icon svg {
+    height: 0.8em;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.container .publicaciones .info-publi .user-icon svg:hover {
+    fill: #ff4500;
+    transition: all .2s;
+}
+
+.container .publicaciones .info-publi .publicacion-content p {
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.container .publicaciones .info-publi .publicacion-content img {
+    width: 100%;
+    max-height: 400px;
+    margin: 0 auto;
+    background-color: #000;
+}
+
+.container .publicaciones .info-publi .publicacion-actions {
+    margin-top: 5px;
+    display: flex;
+}
+
+.container .publicaciones .info-publi .publicacion-actions .publicacion-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    min-width: 80px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.container .publicaciones .info-publi .publicacion-actions .publicacion-item p {
+    margin-left: 10px;
+}
+
+.container .publicaciones .info-publi .publicacion-actions .publicacion-item:nth-child(2) {
+    min-width: 50px;
+}
+
+
+.container .aside {
+    display: flex;
+    width: 50%;
+    height: 350px;
+    margin: 20px 40px;
+}
+
+.container .aside .contenido {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.container .aside .contenido .p {
+    display: flex;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.container .aside .contenido .content-comunidad {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+
+.container .aside .contenido .content-comunidad img {
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.container .aside .contenido .content-comunidad .info-comunidad {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container .aside .contenido .content-comunidad .info-comunidad span {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.container .aside .contenido .content-comunidad .info-comunidad p {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+}
+
+.contenedor .pp {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.contenedor .pp .create {
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.contenedor .pp .create .post-item {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgb(32, 167, 209);
+}
+
+.contenedor .pp .create .post-item svg {
+    font-size: 20px;
+    padding: 0 10px;
+    fill: rgb(32, 167, 209);
+}
+
+.contenedor .pp .create .post-item h3 {
+    text-transform: uppercase;
+    color: rgb(32, 167, 209);
+}
+
+.contenedor .pp form {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.contenedor .pp form .input {
+    height: 40px;
+    width: 100%;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.contenedor .pp form textarea {
+    margin-top: 15px;
+    height: 200px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.contenedor .pp form input[type="submit"] {
+    display: flex;
+    margin-top: 10px;
+    float: right;
+    width: 80px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgb(32, 167, 209);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.contenedor .pp form input[type="submit"]:hover {
+    background-color: rgb(23, 111, 138);
+    transition: all .2s;
+}
+
+.contenedor .principal-edit {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.contenedor .principal-edit .publi {
+    display: flex;
+    flex-flow: row;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.contenedor .principal-edit .publi .votes {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 5px 10px;
+    margin-right: 15px;
+    justify-content: space-around;
+}
+
+.contenedor .principal-edit .publi .votes p {
+    margin: 5px 0;
+}
+
+.contenedor .principal-edit .publi .post {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+.contenedor .principal-edit .publi .post .info-user {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.contenedor .principal-edit .publi .post .info-user p {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.contenedor .principal-edit .publi .post .info-user svg {
+    font-size: 14px;
+}
+
+.contenedor .principal-edit .publi .post .info-user p:last-of-type {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.contenedor .principal-edit .publi .post .info-post {
+    display: flex;
+    align-items: center;
+}
+
+.contenedor .principal-edit .publi .post .info-post p {
+    margin-left: 20px;
+}
+
+.contenedor .principal-edit .publi .post .actions {
+    display: flex;
+    width: 80%;
+    margin: 5px 30px;
+}
+
+.contenedor .principal-edit .publi .post .actions .item {
+    display: flex;
+    margin: 0 10px;
+    cursor: pointer;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.contenedor .principal-edit .publi .post .actions .item a {
+    display: flex;
+    text-decoration: none;
+    color: #000;
+    align-items: center;
+}
+
+.contenedor .principal-edit .publi .post .actions .item form {
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+.contenedor .principal-edit .publi .post .actions .item form svg {
+    margin-right: 5px;
+}
+
+.contenedor .principal-edit .publi .post .actions .item form button {
+    border: none;
+    background-color: initial;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.contenedor .principal-edit .publi .post .actions .item p {
+    margin-left: 5px;
+}
+
+.contenedor .principal-edit .publi .post .actions .item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all .2s;
+}
+
+.contenedor .publicaciones .info-publi .publicacion-actions {
+    margin-top: 5px;
+    display: flex;
+    margin-left: 10px;
+}
+
+.contenedor .publicaciones .info-publi .publicacion-actions .publicacion-item {
+
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.contenedor .publicaciones .info-publi .publicacion-actions .publicacion-item:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all .3s;
+}
+
+.contenedor .publicaciones .info-publi .publicacion-actions .publicacion-item p {
+    margin-left: 10px;
+}
+
+
+.contenedor .principal-edit .no-post {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    align-items: center;
+    font-size: 22px;
+}
+
+.container-edit-post {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 80px;
+    background-color: #fff;
+}
+
+.container-edit-post h2 {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.container-edit-post form {
+    display: flex;
+    flex-flow: column;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container-edit-post form input {
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.container-edit-post form textarea {
+    margin: 20px 0;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+}
+
+.container-edit-post form input[type="submit"] {
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: lightskyblue;
+}
+
+.container-edit-post form input[type="submit"]:hover {
+    opacity: 0.8;
+    transition: all .2s;
+}
