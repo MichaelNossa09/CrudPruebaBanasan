@@ -60,7 +60,8 @@ class PublicacionController extends Controller
 
     public function publicacionesUsuarioLogeado()
     {
-        $user = Auth::user();
+        $userID = Auth::id();
+        $user = User::find($userID);
         $publicaciones = $user->publicaciones()->latest('created_at')->get();
 
         return view('user/posts', compact('publicaciones'));
