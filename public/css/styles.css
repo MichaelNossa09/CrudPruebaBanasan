@@ -536,9 +536,10 @@ header .search-container {
 
 .contenedor .aside {
     display: flex;
-    width: 30%;
+    max-height: 500px;
+    width: 80%;
     flex-flow: column;
-    margin-left: 30px;
+    margin: 0 20px;
 }
 
 .contenedor .aside .reddit-premium {
