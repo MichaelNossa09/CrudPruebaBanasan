@@ -202,8 +202,6 @@
                 </div>
             </div>
         </div>
-
-        <script src="{{ asset('js/modal.js') }}"></script>
     @endif
 
     @yield('content')
@@ -241,7 +239,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="{{ asset('js/vote.js') }}"></script>
-
+    <script src="{{ asset('js/modal.js') }}"></script>
 </body>
 
 </html>
