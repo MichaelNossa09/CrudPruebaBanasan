@@ -58,16 +58,18 @@ ORDER BY Recaudado DESC
 ```
 
 ## 4. Diseñar y codificar una interface que simule la popular aplicación https://www.reddit.com/. De lo anterior como mínimo se espera tener las siguientes funcionalidades:
-1. Listar publicaciones por fecha (del más reciente al más antiguo:
+1. Listar publicaciones por fecha (del más reciente al más antiguo):
     * Fecha de publicación
     * Usuario que publica
-    * Número de votos
-2.	Inicio de sesión (usuario, contraseña) 
+    * Número de votos  
+2.	Inicio de sesión (usuario, contraseña)     
 **(No obligatorio) Requiere autenticación para acceder a las siguientes funcionalidades.**  
-3. Crear una publicación (título, contenido (puede ser solo texto), fecha de creación, usuario creador, cantidad de votos).
-4. Editar una publicación.
-5. Eliminar una publicación.
-6. Añadir voto o quitar voto de una publicación (solo un voto por usuario).
+3. Crear una publicación (título, contenido (puede ser solo texto), fecha de creación, usuario creador, cantidad de votos).  
+4. Editar una publicación.  
+5. Eliminar una publicación.  
+6. Añadir voto o quitar voto de una publicación (solo un voto por usuario).  
+
+**LINK DEL PROYECTO https://crudpruebabanasan-production.up.railway.app/home**
 
 **Se puede orientar al desarrollo web o al desarrollo móvil.**
 **Se puede utilizar la tecnología de desarrollo con la que se sienta más a gusto.**
