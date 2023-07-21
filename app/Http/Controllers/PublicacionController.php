@@ -76,10 +76,8 @@ class PublicacionController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'title' => 'required',
-            'content' => 'required',
         ], [
             'title.required' => 'El campo título es obligatorio.',
-            'content.required' => 'El campo contenido es obligatorio.',
         ]);
 
         if ($validator->fails()) {
@@ -94,6 +92,7 @@ class PublicacionController extends Controller
         return redirect()->route('publicacion.user')
             ->with('success', 'Post Updated Succesfully');
     }
+
     public function delete($id)
     {
         $publicacion = Publicacion::find($id);

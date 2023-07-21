@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    // Agregar el token CSRF a todas las solicitudes AJAX
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -8,8 +7,7 @@ $(document).ready(function () {
 
     $('.vote-up, .vote-down').on('click', function () {
         const publicacionId = $(this).data('publicacion-id');
-        const voteType = $(this).hasClass('vote-up') ? 1 : 0; // 1 para voto positivo (upvote), 0 para voto negativo (downvote)
-
+        const voteType = $(this).hasClass('vote-up') ? 1 : 0;
         $.ajax({
             type: 'POST',
             url: '/vote',
